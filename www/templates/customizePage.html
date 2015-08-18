@@ -1,0 +1,26 @@
+ <ion-modal-view>
+    <ion-header-bar>
+           
+          <button class="button icon ion-close-round"  ng-click="closeModal()"></button>
+          <h1 class="title">Customize item</h1>
+          <button class="button" ng-click="savePreference()"> ADD </button>
+          
+    </ion-header-bar>
+    <ion-content>
+        <div class="customizeItemArea">
+            <div class="row">
+              <div class="col col-75">
+                 <h4>{{modelItem.ItemName}}</h4>  
+              </div>
+              <div class="col ">
+                    <a class="icon ion-minus-round" ng-click="menuMinusClick(modelItem.ItemId, modelItem)"></a> 
+                     <span ng-init="items.ItemCount = 0">{{modelItem.reviewCount + modelItem.confirmCount + modelItem.ItemCount }}  </span>
+                    <a class="icon ion-plus-round" ng-click="menuPlusClick(modelItem.ItemId, modelItem)"></a>  
+              </div>
+            </div> 
+        </div>
+        <div ng-if="customizeData.status">  
+        </div>
+         
+    </ion-content>
+  </ion-modal-view>
